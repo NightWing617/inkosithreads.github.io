@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inkosi Threads | Premium South African Outerwear</title>
+  <meta name="description" content="Shop premium outdoor wear for South African men with Inkosi Threads. Inspired by Zulu legacy and made for modern kings. Jackets, gilets, hoodies — built for the wild." />
+
+  <!-- Tailwind + Fonts + Scripts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" defer></script>
+  <script src="assets/js/script.js" defer></script>
+
+  <!-- Structured Data (SEO JSON-LD) -->
+  <script type="application/ld+json" src="assets/data/seo-organization.json"></script>
+  <script type="application/ld+json" src="assets/data/seo-reviews.json"></script>
+</head>
+
+<body class="bg-sandstone text-charcoal">
+  <!-- Modular Sections -->
+  <div include-html="partials/hero.html"></div>
+  <div include-html="partials/about.html"></div>
+  <div include-html="partials/footer.html"></div>
+
+  <!-- JS to dynamically load partials -->
+  <script>
+    document.querySelectorAll('[include-html]').forEach(async (el) => {
+      const file = el.getAttribute('include-html');
+      try {
+        const res = await fetch(file);
+        if (res.ok) el.innerHTML = await res.text();
+        else el.innerHTML = "<p class='text-red-600'>Section failed to load.</p>";
+      } catch (err) {
+        console.error('Error loading partial:', file);
+      }
+    });
+  </script>
+</body>
+
+</html>

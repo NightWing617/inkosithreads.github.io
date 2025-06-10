@@ -1,0 +1,18 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Inkosi Threads",
+  "url": "https://www.inkosithreads.com",
+  "logo": "https://www.inkosithreads.com/logo.png",
+  "description": "Premium South African outerwear for men who lead. Inspired by Zulu heritage and crafted for modern kings.",
+  "sameAs": [
+    "https://www.facebook.com/inkosithreads",
+    "https://www.instagram.com/inkosithreads",
+    "https://twitter.com/inkosithreads"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+27-11-555-1234",
+    "contactType": "Customer service"
+  }
+}

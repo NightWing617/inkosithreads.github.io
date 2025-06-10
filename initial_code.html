@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inkosi Threads | Premium South African Outerwear</title>
+    <meta name="description"
+        content="Shop premium outdoor wear for South African men with Inkosi Threads. Inspired by Zulu legacy and made for modern kings. Jackets, gilets, hoodies — built for the wild.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'forest-green': '#2F4F2F',
+                        'earth-brown': '#5C4033',
+                        'sandstone': '#F5F0E1',
+                        'charcoal': '#222222'
+                    },
+                    fontFamily: {
+                        'heading': ['Playfair Display', 'serif'],
+                        'body': ['Lato', 'sans-serif']
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "url('https://images.unsplash.com/photo-1579536841367-d1c6ee3d83d2?q=80&w=2940&auto=format&fit=crop')",
+                        'about-bg': "url('https://images.unsplash.com/photo-1600180758890-6b94519a8ba6?q=80&w=2940&auto=format&fit=crop')",
+                        'trail-bg': "url('https://images.unsplash.com/photo-1506905925346-21bda4ded32a?q=80&w=2940&auto=format&fit=crop')",
+                        'urban-bg': "url('https://images.unsplash.com/photo-1501612780327-45045538702b?q=80&w=2670&auto=format&fit=crop')",
+                        'family-bg': "url('https://images.unsplash.com/photo-1614624532983-1fe21c9df6b4?q=80&w=2787&auto=format&fit=crop')"
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @layer utilities {
+            .tribal-divider {
+                position: relative;
+                padding-bottom: 20px;
+            }
+            .tribal-divider::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80px;
+                height: 4px;
+                background-color: #5C4033;
+            }
+            .tribal-divider-lg::after {
+                width: 120px;
+                height: 6px;
+            }
+            .hero-overlay {
+                background: rgba(47, 79, 47, 0.7);
+            }
+            .testimonial-slide {
+                min-height: 300px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .product-item:hover .product-details {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            .instagram-hover {
+                position: relative;
+                overflow: hidden;
+            }
+            .instagram-hover::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(47, 79, 47, 0.8);
+                opacity: 0;
+                transition: opacity 0.3s;
+                z-index: 1;
+            }
+            .instagram-hover:hover::before {
+                opacity: 1;
+            }
+            .instagram-hover .icon {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) scale(0);
+                color: white;
+                font-size: 2rem;
+                z-index: 2;
+                transition: transform 0.3s;
+            }
+            .instagram-hover:hover .icon {
+                transform: translate(-50%, -50%) scale(1);
+            }
+            .carousel-item {
+                display: none;
+            }
+            .carousel-item.active {
+                display: block;
+            }
+        }
+        body {
+            font-family: 'body', sans-serif;
+        }
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'heading', serif;
+        }
+        .bg-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%235C4033' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            background-color: #F5F0E1;
+        }
+    </style>
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Inkosi Threads",
+        "url": "https://www.inkosithreads.com",
+        "logo": "https://www.inkosithreads.com/logo.png",
+        "description": "Premium South African outerwear for men who lead. Inspired by Zulu heritage and crafted for modern kings.",
+        "sameAs": [
+            "https://www.facebook.com/inkosithreads",
+            "https://www.instagram.com/inkosithreads",
+            "https://twitter.com/inkosithreads"
+        ],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+27-11-555-1234",
+            "contactType": "Customer service"
+        }
+    }
+    </script>
+</head>
+
+<body class="bg-sandstone text-charcoal">
+    <!-- Mobile Navigation Menu -->
+    <div id="mobileMenu"
+        class="fixed inset-0 bg-forest-green text-sandstone z-50 transform translate-x-full transition-transform duration-300">
+        <div class="p-6 flex justify-between items-center border-b border-sandstone">
+            <div class="text-2xl font-bold">INKOSI THREADS</div>
+            <button id="closeMenu" class="text-3xl">&times;</button>
+        </div>
+        <nav class="p-6">
+            <ul class="space-y-6 text-xl">
+                <li><a href="#" class="block py-3">Home</a></li>
+                <li><a href="#" class="block py-3">Shop</a></li>
+                <li><a href="#" class="block py-3">Winter Range</a></li>
+                <li><a href="#" class="block py-3">Heritage</a></li>
+                <li><a href="#" class="block py-3">Father's Day</a></li>
+                <li><a href="#" class="block py-3">Contact</a></li>
+                <li><a href="#"
+                        class="mt-8 inline-block px-8 py-3 bg-charcoal text-sandstone rounded-sm font-medium">Shop
+                        Now</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Header Section -->
+    <header class="sticky top-0 z-40 bg-sandstone shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl md:text-2xl font-bold text-forest-green">INKOSI THREADS</a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-8 text-charcoal">
+                <a href="#" class="hover:text-earth-brown">Home</a>
+                <a href="#" class="hover:text-earth-brown">Shop</a>
+                <a href="#" class="hover:text-earth-brown">Winter Range</a>
+                <a href="#" class="hover:text-earth-brown">Heritage</a>
+                <a href="#" class="hover:text-earth-brown">Father's Day</a>
+                <a href="#" class="hover:text-earth-brown">Contact</a>
+                <a href="#" class="px-4 py-2 bg-forest-green text-sandstone hover:bg-earth-brown">Shop Now</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="openMenu" class="md:hidden text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="relative min-h-screen flex items-center bg-hero-pattern bg-cover bg-center">
+        <div class="absolute inset-0 hero-overlay"></div>
+        <div class="container mx-auto px-6 md:px-12 relative z-10 py-32 text-center md:text-left">
+            <div class="max-w-2xl mx-auto md:mx-0">
+                <h1 class="text-4xl md:text-6xl font-bold text-sandstone mb-6">Embrace the Wild in Style</h1>
+                <h2 class="text-2xl md:text-3xl text-sandstone mb-10">Premium Outdoor Wear for the Modern Inkosi</h2>
+                <div class="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#" class="px-8 py-4 bg-sandstone text-forest-green font-bold hover:bg-opacity-90">Explore
+                        the Range</a>
+                    <a href="#"
+                        class="px-8 py-4 bg-transparent border-2 border-sandstone text-sandstone hover:bg-sandstone hover:text-forest-green">Shop
+                        the Legacy Jacket</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About the Brand Section -->
+    <section class="py-20 bg-pattern">
+        <div class="container mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl md:text-4xl text-forest-green mb-8 font-bold relative tribal-divider">Inspired by
+                    Kings. Made for Today.</h2>
+                <p class="text-lg text-charcoal mb-8 leading-relaxed">
+                    Inkosi Threads was born in the heart of KwaZulu-Natal — where the mountains meet the sea, and
+                    tradition meets innovation. Our gear reflects the spirit of leadership, crafted for men who carry
+                    culture with pride and walk paths less travelled.
+                </p>
+                <a href="#"
+                    class="inline-flex items-center px-6 py-3 bg-forest-green text-sandstone font-medium hover:bg-opacity-90 group">
+                    Read Our Story
+                    <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+            <div class="rounded-xl overflow-hidden shadow-lg">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2940&auto=format&fit=crop"
+                     alt="Zulu fashion heritage: Model wearing Inkosi Threads gear in natural surroundings"
+                     class="w-full h-auto object-cover">
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl text-center text-charcoal mb-16 relative tribal-divider tribal-divider-lg">
+                This Season's Essentials</h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Product 1 -->
+                <div class="product-item overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?q=80&w=2787&auto=format&fit=crop"
+                             alt="Zulu outerwear: Legacy Puffer Jacket with feather embroidery"
+                             class="w-full h-80 object-cover">
+                        <div
+                            class="product-details absolute inset-0 bg-black bg-opacity-70 flex flex-col items-center justify-center opacity-0 transition-all transform translate-y-4">
+                            <h3 class="text-xl font-bold text-sandstone mb-2">Legacy Puffer Jacket</h3>
+                            <p class="text-earth-brown mb-4 text-center px-4">Signature feather embroidery,
+                                water-resistant, thermal-lined</p>
+                            <div class="flex space-x-4">
+                                <button class="bg-sandstone text-charcoal px-4 py-2 font-medium">Quick View</button>
+                                <button class="bg-forest-green text-sandstone px-4 py-2 font-medium">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg">Legacy Puffer Jacket</h3>
+                        <p class="text-forest-green font-medium">R2,499</p>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-item overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1603871165846-aa5b64a59b12?q=80&w=2831&auto=format&fit=crop"
+                             alt="South African men's fashion: FeatherLite Gilet for outdoor adventures"
+                             class="w-full h-80 object-cover">
+                        <div
+                            class="product-details absolute inset-0 bg-black bg-opacity-70 flex flex-col items-center justify-center opacity-0 transition-all transform translate-y-4">
+                            <h3 class="text-xl font-bold text-sandstone mb-2">FeatherLite Gilet</h3>
+                            <p class="text-earth-brown mb-4 text-center px-4">Lightweight & sleeveless for chilly summer
+                                mornings</p>
+                            <div class="flex space-x-4">
+                                <button class="bg-sandstone text-charcoal px-4 py-2 font-medium">Quick View</button>
+                                <button class="bg-forest-green text-sandstone px-4 py-2 font-medium">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg">FeatherLite Gilet</h3>
+                        <p class="text-forest-green font-medium">R1,799</p>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-item overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?q=80&w=2787&auto=format&fit=crop"
+                             alt="Rugged African jackets: Inkaba Hoodie with cultural prints"
+                             class="w-full h-80 object-cover">
+                        <div
+                            class="product-details absolute inset-0 bg-black bg-opacity-70 flex flex-col items-center justify-center opacity-0 transition-all transform translate-y-4">
+                            <h3 class="text-xl font-bold text-sandstone mb-2">The Inkaba Hoodie</h3>
+                            <p class="text-earth-brown mb-4 text-center px-4">Warm inner fleece with cultural prints</p>
+                            <div class="flex space-x-4">
+                                <button class="bg-sandstone text-charcoal px-4 py-2 font-medium">Quick View</button>
+                                <button class="bg-forest-green text-sandstone px-4 py-2 font-medium">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg">The Inkaba Hoodie</h3>
+                        <p class="text-forest-green font-medium">R1,399</p>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-item overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1520962880247-cfaf541c8724?q=80&w=2832&auto=format&fit=crop"
+                             alt="Eco-conscious winter jackets: Isikhumba Beanie with leather Inkosi patch"
+                             class="w-full h-80 object-cover">
+                        <div
+                            class="product-details absolute inset-0 bg-black bg-opacity-70 flex flex-col items-center justify-center opacity-0 transition-all transform translate-y-4">
+                            <h3 class="text-xl font-bold text-sandstone mb-2">Isikhumba Beanie</h3>
+                            <p class="text-earth-brown mb-4 text-center px-4">Knitted beanie with leather Inkosi patch
+                            </p>
+                            <div class="flex space-x-4">
+                                <button class="bg-sandstone text-charcoal px-4 py-2 font-medium">Quick View</button>
+                                <button class="bg-forest-green text-sandstone px-4 py-2 font-medium">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg">Isikhumba Beanie</h3>
+                        <p class="text-forest-green font-medium">R349</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collections Section -->
+    <section class="py-20 bg-sandstone">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl text-center text-charcoal mb-16 relative tribal-divider tribal-divider-lg">
+                Shop by Lifestyle</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Collection 1 -->
+                <a href="#" class="group relative overflow-hidden rounded-xl shadow-lg h-96">
+                    <div
+                        class="absolute inset-0 bg-trail-bg bg-cover bg-center group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-transparent"></div>
+                    <div class="relative h-full flex flex-col justify-end p-8">
+                        <h3 class="text-2xl font-bold text-sandstone mb-2">Trail Tested</h3>
+                        <p class="text-sandstone opacity-90 mb-6">Rugged wear for hiking & outdoor adventure</p>
+                        <div class="opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="inline-block text-sandstone border-b border-sandstone">Explore Collection</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Collection 2 -->
+                <a href="#" class="group relative overflow-hidden rounded-xl shadow-lg h-96">
+                    <div
+                        class="absolute inset-0 bg-urban-bg bg-cover bg-center group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-transparent"></div>
+                    <div class="relative h-full flex flex-col justify-end p-8">
+                        <h3 class="text-2xl font-bold text-sandstone mb-2">Urban Inkosi</h3>
+                        <p class="text-sandstone opacity-90 mb-6">Clean-cut fits for everyday kings</p>
+                        <div class="opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="inline-block text-sandstone border-b border-sandstone">Explore Collection</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Collection 3 -->
+                <a href="#" class="group relative overflow-hidden rounded-xl shadow-lg h-96">
+                    <div
+                        class="absolute inset-0 bg-family-bg bg-cover bg-center group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-transparent"></div>
+                    <div class="relative h-full flex flex-col justify-end p-8">
+                        <h3 class="text-2xl font-bold text-sandstone mb-2">Father & Son Sets</h3>
+                        <p class="text-sandstone opacity-90 mb-6">Family bonding, Zulu-style</p>
+                        <div class="opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="inline-block text-sandstone border-b border-sandstone">Explore Collection</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block px-8 py-4 bg-forest-green text-sandstone hover:bg-opacity-90">
+                    See All Collections
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl text-center text-charcoal mb-16 relative tribal-divider tribal-divider-lg">
+                Voices from the Tribe</h2>
+
+            <div class="carousel max-w-4xl mx-auto">
+                <div class="carousel-item active testimonial-slide">
+                    <div class="text-center p-8">
+                        <p class="text-xl italic text-charcoal mb-8">
+                            "Inkosi Threads is more than fashion — it's how I carry my heritage into the world. The
+                            Legacy Jacket has kept me warm through the toughest Drakensberg winters."
+                        </p>
+                        <p class="text-lg font-bold text-forest-green">Thabo M., Drakensberg</p>
+                    </div>
+                </div>
+                <div class="carousel-item testimonial-slide">
+                    <div class="text-center p-8">
+                        <p class="text-xl italic text-charcoal mb-8">
+                            "Bought the Inkaba Hoodie for my father. The quality, the fit — unmatched. He wears it with
+                            pride to every family gathering now."
+                        </p>
+                        <p class="text-lg font-bold text-forest-green">Sibusiso D., Soweto</p>
+                    </div>
+                </div>
+                <div class="carousel-item testimonial-slide">
+                    <div class="text-center p-8">
+                        <p class="text-xl italic text-charcoal mb-8">
+                            "As someone who spends half the year outdoors, I appreciate gear that performs. The
+                            FeatherLite Gilet is my go-to for early mornings on the game farm."
+                        </p>
+                        <p class="text-lg font-bold text-forest-green">Kgosi T., Limpopo</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-center mt-8 space-x-3">
+                <button class="carousel-indicator w-3 h-3 rounded-full bg-charcoal bg-opacity-30 active"></button>
+                <button class="carousel-indicator w-3 h-3 rounded-full bg-charcoal bg-opacity-30"></button>
+                <button class="carousel-indicator w-3 h-3 rounded-full bg-charcoal bg-opacity-30"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promotional Banner -->
+    <section class="py-16 bg-charcoal">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <span class="text-3xl mr-3">🔥</span>
+                    <span class="text-xl text-sandstone">Shop the Winter Collection</span>
+                </div>
+                <div class="flex items-center mb-4 md:mb-0">
+                    <span class="text-3xl mr-3">🧔🏽‍♂️</span>
+                    <span class="text-xl text-sandstone">Inkosi Gifts for Father's Day</span>
+                </div>
+                <div class="flex items-center">
+                    <span class="text-3xl mr-3">🚚</span>
+                    <span class="text-xl text-sandstone">Free Delivery over R750</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Feed -->
+    <section class="py-20 bg-sandstone">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl text-center text-charcoal mb-12 relative tribal-divider tribal-divider-lg">
+                #WearYourHeritage</h2>
+            <p class="text-center text-charcoal mb-16 max-w-2xl mx-auto">
+                Real kings wear Inkosi. Follow <span class="font-bold">@inkosithreads</span> for style inspiration,
+                heritage stories, and new drops.
+            </p>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2">
+                <!-- Instagram images -->
+                <a href="#" class="instagram-hover aspect-square">
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2940&auto=format&fit=crop"
+                         alt="Real kings wear Inkosi: Customer in Legacy Jacket in urban setting"
+                         class="w-full h-full object-cover">
+                    <div class="icon text-white">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </a>
+                <a href="#" class="instagram-hover aspect-square">
+                    <img src="https://images.unsplash.com/photo-1536766820879-059f64385881?q=80&w=2940&auto=format&fit=crop"
+                         alt="South African outdoor fashion: FeatherLite Gilet in safari setting"
+                         class="w-full h-full object-cover">
+                    <div class="icon text-white">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </a>
+                <a href="#" class="instagram-hover aspect-square">
+                    <img src="https://images.unsplash.com/photo-1531123414780-f10242adee5d?q=80&w=2787&auto=format&fit=crop"
+                         alt="Eco-conscious SA clothing: Heritage photo with Zulu patterns"
+                         class="w-full h-full object-cover">
+                    <div class="icon text-white">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </a>
+                <a href="#" class="instagram-hover aspect-square">
+                    <img src="https://images.unsplash.com/photo-1593571420024-6c42e3681e85?q=80&w=2787&auto=format&fit=crop"
+                         alt="African menswear brands: Model in mountain terrain with Inkosi jacket"
+                         class="w-full h-full object-cover">
+                    <div class="icon text-white">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </a>
+                <a href="#" class="instagram-hover aspect-square">
+                    <img src="https://images.unsplash.com/photo-1551982165-60b08c00f60e?q=80&w=2940&auto=format&fit=crop"
+                         alt="Inkosi Threads in action: Product lifestyle shot"
+                         class="w-full h-full object-cover">
+                    <div class="icon text-white">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </a>
+                <a href="#" class="instagram-hover aspect-square">
+                    <img src="https://images.unsplash.com/photo-1576566588028-5617e7a8cd10?q=80&w=2940&auto=format&fit=crop"
+                         alt="Family wearing Inkosi Threads: Father and son bonding"
+                         class="w-full h-full object-cover">
+                    <div class="icon text-white">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <h2 class="text-3xl md:text-4xl text-center text-charcoal mb-6 relative tribal-divider tribal-divider-lg">
+                Join the Tribe</h2>
+            <p class="text-center text-charcoal mb-10">
+                Get exclusive first access to new drops, discounts, and heritage stories.
+            </p>
+
+            <form class="flex flex-col sm:flex-row gap-4">
+                <input type="email" placeholder="Your email address"
+                       class="flex-grow px-6 py-4 bg-sandstone bg-opacity-30 focus:ring-2 focus:ring-forest-green focus:outline-none">
+                <button type="submit" class="px-8 py-4 bg-forest-green text-sandstone hover:bg-opacity-90 font-medium">
+                    Subscribe
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 bg-charcoal text-sandstone">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">INKOSI THREADS</h3>
+                    <p class="mb-6 opacity-80">
+                        Premium outerwear for men who lead. Crafted with Zulu heritage and modern innovation for today's
+                        kings.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-2xl"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-2xl"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-2xl"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold mb-4 uppercase tracking-wider">SHOP</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-earth-brown">All Products</a></li>
+                        <li><a href="#" class="hover:text-earth-brown">Winter Collection</a></li>
+                        <li><a href="#" class="hover:text-earth-brown">Gilets & Vests</a></li>
+                        <li><a href="#" class="hover:text-earth-brown">Hoodies & Sweats</a></li>
+                        <li><a href="#" class="hover:text-earth-brown">Accessories</a></li>
+                        <li><a href="#" class="hover:text-earth-brown">Gift Cards</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold mb-4 uppercase tracking-wider">SUPPORT</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-earth-brown">FAQ</a></li>
+                        <li><a href="#" class="hover:text-earth-brown">Shipping & Returns</a></li>
+                        <li><a href="#" class="hover:text-earth-brown">Store Policy</a></li>
+                        <li><a href="#" class="hover:text-earth-brown">Payment Methods</a></li>
+                        <li><a href="#" class="hover:text-earth-brown">Size Guide</a></li>
+                        <li><a href="#" class="hover:text-earth-brown">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold mb-4 uppercase tracking-wider">LEGAL</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-earth-brown">Terms & Conditions</a></li>
+                        <li><a href="#" class="hover:text-earth-brown">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-earth-brown">Sitemap</a></li>
+                        <li>
+                            <div class="mt-6">
+                                <select class="bg-forest-green text-sandstone px-4 py-2 rounded-sm">
+                                <option>English</option>
+                                <option>Zulu (Coming Soon)</option>
+                            </select>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-sandstone border-opacity-20 mt-12 pt-8 text-center opacity-80">
+                <p>&copy; 2023 Inkosi Threads. All rights reserved. Crafted with pride in KwaZulu-Natal.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Functionality
+        const openMenu = document.getElementById('openMenu');
+        const closeMenu = document.getElementById('closeMenu');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        openMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Testimonial Carousel
+        const carouselIndicators = document.querySelectorAll('.carousel-indicator');
+        const carouselItems = document.querySelectorAll('.carousel-item');
+        
+        carouselIndicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                // Remove active classes
+                carouselItems.forEach(item => item.classList.remove('active'));
+                carouselIndicators.forEach(ind => ind.classList.remove('active'));
+                
+                // Add active classes
+                carouselItems[index].classList.add('active');
+                indicator.classList.add('active');
+            });
+        });
+        
+        // Auto rotate testimonials
+        let currentTestimonial = 0;
+        setInterval(() => {
+            currentTestimonial = (currentTestimonial + 1) % carouselItems.length;
+            
+            carouselItems.forEach(item => item.classList.remove('active'));
+            carouselIndicators.forEach(ind => ind.classList.remove('active'));
+            
+            carouselItems[currentTestimonial].classList.add('active');
+            carouselIndicators[currentTestimonial].classList.add('active');
+        }, 5000);
+    </script>
+
+    <!-- SEO Structured Data: Reviews -->
+    <script type="application/ld+json">
+        [
+    {
+        "@context": "https://schema.org",
+        "@type": "Review",
+        "itemReviewed": {
+            "@type": "Product",
+            "name": "Legacy Puffer Jacket"
+        },
+        "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "Thabo M."
+        },
+        "reviewBody": "Inkosi Threads is more than fashion — it's how I carry my heritage into the world. The Legacy Jacket has kept me warm through the toughest Drakensberg winters."
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Review",
+        "itemReviewed": {
+            "@type": "Product",
+            "name": "Inkaba Hoodie"
+        },
+        "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "Sibusiso D."
+        },
+        "reviewBody": "Bought this for my father. The quality, the fit — unmatched. He wears it with pride to every family gathering now."
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Review",
+        "itemReviewed": {
+            "@type": "Product",
+            "name": "FeatherLite Gilet"
+        },
+        "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "Kgosi T."
+        },
+        "reviewBody": "As someone who spends half the year outdoors, I appreciate gear that performs. The FeatherLite Gilet is my go-to for early mornings on the game farm."
+    }
+    ]
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=Temp31415/new-space" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+
+</html>
