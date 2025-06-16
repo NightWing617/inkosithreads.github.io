@@ -1,0 +1,12 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Inkosi Threads",
+  "url": "https://www.inkosithreads.com",
+  "logo": "https://www.inkosithreads.com/logo.png",
+  "sameAs": [
+    "https://www.facebook.com/inkosithreads",
+    "https://www.instagram.com/inkosithreads",
+    "https://twitter.com/inkosithreads"
+  ]
+}

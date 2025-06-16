@@ -13,7 +13,20 @@
   <script src="assets/js/script.js" defer></script>
 
   <!-- SEO Structured Data -->
-  <script type="application/ld+json" src="assets/data/seo-organization.json"></script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Inkosi Threads",
+      "url": "https://www.inkosithreads.com",
+      "logo": "https://www.inkosithreads.com/logo.png",
+      "sameAs": [
+        "https://www.facebook.com/inkosithreads",
+        "https://www.instagram.com/inkosithreads",
+        "https://twitter.com/inkosithreads"
+      ]
+    }
+  </script>
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -51,29 +64,15 @@
     </div>
   </section>
 
-  <section class="py-20 bg-sandstone">
-    <div class="container mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-      <div>
-        <h2 class="text-3xl md:text-4xl text-forest-green mb-8 font-bold relative tribal-divider">Inspired by Kings. Made for Today.</h2>
-        <p class="text-lg text-charcoal mb-8 leading-relaxed">
-          Inkosi Threads was born in the heart of KwaZulu-Natal — where the mountains meet the sea, and tradition meets innovation. Our gear reflects the spirit of leadership, crafted for men who carry culture with pride and walk paths less travelled.
-        </p>
-        <a href="#" class="inline-flex items-center px-6 py-3 bg-forest-green text-sandstone font-medium hover:bg-opacity-90 group">
-          Read Our Story <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
-        </a>
-      </div>
-      <div class="rounded-xl overflow-hidden shadow-lg">
-        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2940&auto=format&fit=crop" alt="Zulu heritage model in outdoor Inkosi wear" class="w-full h-auto object-cover">
-      </div>
-    </div>
-  </section>
+  <div include-html="partials/about.html"></div>
 
   <!-- Include your modular components for: -->
   <!-- - Featured Father's Day products -->
   <!-- - Lifestyle sections (Father & Son Sets) -->
   <!-- - Testimonials (same as homepage if reused) -->
   <!-- - Offer banners (with icons and deadlines) -->
-  <!-- - Newsletter and Footer -->
+
+  <div include-html="partials/footer.html"></div>
 
 </body>
 
