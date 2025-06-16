@@ -36,3 +36,20 @@ setInterval(() => {
     carouselItems[currentTestimonial].classList.add('active');
     carouselIndicators[currentTestimonial].classList.add('active');
 }, 5000);
+
+// Load HTML partials dynamically after DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('[include-html]').forEach(async (el) => {
+        const file = el.getAttribute('include-html');
+        try {
+            const res = await fetch(file);
+            if (res.ok) {
+                el.innerHTML = await res.text();
+            } else {
+                el.innerHTML = "<p class='text-red-600'>Section failed to load.</p>";
+            }
+        } catch (err) {
+            console.error('Error loading partial:', file, err);
+        }
+    });
+});
