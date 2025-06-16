@@ -14,8 +14,40 @@
   <script src="assets/js/script.js" defer></script>
 
   <!-- Structured Data (SEO JSON-LD) -->
-  <script type="application/ld+json" src="assets/data/seo-organization.json"></script>
-  <script type="application/ld+json" src="assets/data/seo-reviews.json"></script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Inkosi Threads",
+      "url": "https://www.inkosithreads.com",
+      "logo": "https://www.inkosithreads.com/logo.png",
+      "sameAs": [
+        "https://www.facebook.com/inkosithreads",
+        "https://www.instagram.com/inkosithreads",
+        "https://twitter.com/inkosithreads"
+      ]
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Inkosi Threads",
+      "url": "https://www.inkosithreads.com",
+      "logo": "https://www.inkosithreads.com/logo.png",
+      "description": "Premium South African outerwear for men who lead. Inspired by Zulu heritage and crafted for modern kings.",
+      "sameAs": [
+        "https://www.facebook.com/inkosithreads",
+        "https://www.instagram.com/inkosithreads",
+        "https://twitter.com/inkosithreads"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+27-11-555-1234",
+        "contactType": "Customer service"
+      }
+    }
+  </script>
 </head>
 
 <body class="bg-sandstone text-charcoal">
@@ -24,19 +56,7 @@
   <div include-html="partials/about.html"></div>
   <div include-html="partials/footer.html"></div>
 
-  <!-- JS to dynamically load partials -->
-  <script>
-    document.querySelectorAll('[include-html]').forEach(async (el) => {
-      const file = el.getAttribute('include-html');
-      try {
-        const res = await fetch(file);
-        if (res.ok) el.innerHTML = await res.text();
-        else el.innerHTML = "<p class='text-red-600'>Section failed to load.</p>";
-      } catch (err) {
-        console.error('Error loading partial:', file);
-      }
-    });
-  </script>
+  <!-- Partials are loaded via assets/js/script.js -->
 </body>
 
 </html>
